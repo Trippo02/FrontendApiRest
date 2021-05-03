@@ -5,17 +5,19 @@
 <script src="funzioni.js" type="text/javascript"></script>
 </head>
 
-<body onload="loadallelement()">
+<body onload="onload()">
 <center>
 
 <form id="listaemployee">
 
 <div class="ciao">
 Manage <p class="imp">Employees</p>
-<a onclick="deletepls()" >
+<a onclick="delete()" >
 <input type="image" src="Delete.jpg"  height="35x" style="margin-left:23rem"></input><h1 class="bottone">Delete</h1></a>
-<a onclick="addpls()">
+<a onclick="add()">
 <input type="image" src="Add.jpg" height="35px"></input><h1 class="bottone">  Add New Employee</h1></a>
+<input type="image" src="Modifica.png" height="35px"></input>
+<input type="image" src="Canc.jpg" height="35px"></input>
 </div>
 <br><br>
 
@@ -42,19 +44,17 @@ Manage <p class="imp">Employees</p>
 
 
 <div>
-<table>
-<tr>
-<td><input id="nameform" type="text" ></input></td>
-<td><input id="emailform" type="text" ></input></td>
-<td><input id="addressform" type="text" ></input></td>
-<td><input id="phoneform" type="text" ></input></td>
-<td><input type="image" src="Modifica.png" height="35px"></input></td>
-<td><input type="image" src="Canc.jpg" height="35px"></input></td>
-<a onclick="sendaddemployee()" style="margin-left: 1%">
-<img src="Add1.jpg" height="35px"></a>
-</tr>
-</table>
-
+<div>
+<input id="nameform" type="text" ></input>
+</div><div>
+<input id="emailform" type="text" ></input>
+</div><div>
+<td><input id="addressform" type="text" ></input>
+</div><div>
+<td><input id="phoneform" type="text" ></input>
+</div><div>
+<a onclick="sendaddemployee()" style="margin-left: 3%"><img src="Add1.jpg" height="35px"></a>
+</div>
 </div>
 </form>
 

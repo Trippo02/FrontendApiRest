@@ -1,22 +1,20 @@
-//__________________global item______________________________________
 var employee;
 class Employer {
     constructor(name, email, address, phone) {
-        this.firstName = name;
-        this.lastName = email;
+        this.name = name;
+        this.email = email;
         this.address = address;
         this.phone = phone;
     }
 };
 
-//__________________main function____________________________________
-function loadallelement() {
+function onload() {
     document.getElementById("addemployee").style.display = "none";
     document.getElementById("listaemployee").style.display = "block";
     requestall();
 }
 
-function deletepls(element) {
+function delete(element) {
     try {
         if (element == undefined) {
             var checkboxes = document.getElementsByName('checkbox');
@@ -28,15 +26,14 @@ function deletepls(element) {
             if (confirm("I\'m sure about what I\'m doing")) {
                 sendremovethis(element);
                 location.reload();
-                //document.getElementById('itemscontainer').removeChild(document.getElementById(element));
-            }
+				}
         }
     } catch (Exception) {
-        //I didn't understand why this happen
+        
     }
 }
 
-function addpls(element) {
+function add(element) {
     try {
         if (element == undefined) {
             document.getElementById("listaemployee").style.display = "none";
@@ -51,7 +48,7 @@ function addpls(element) {
             sendupdatethis(employer, element);
         }
     } catch (Exception) {
-        //I didn't understand why this happen
+       
     }
 }
 
@@ -66,14 +63,13 @@ function mainadd(employer, elem) {
     elem++;
 }
 
-function checkboxall(checkboxall) {
+function checkboxall(checkbox) {
     var checkboxes = document.getElementsByName('checkbox'); //ByName make an array of checkbox elements in html document  
     for (var i = 0, n = checkboxes.length; i < n; i++) {
         checkboxes[i].checked = maincheckbox.checked;
     }
 }
 
-//__________________request functions________________________________
 function requestall() {
     var request = new XMLHttpRequest();
     request.onreadystatechange = function() {
